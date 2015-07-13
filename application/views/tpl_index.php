@@ -1,0 +1,1 @@
+<h3 style="text-align: center">Witaj, <b><?php echo $_SESSION['login']; ?></b>!</h3>

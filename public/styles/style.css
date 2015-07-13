@@ -1,0 +1,58 @@
+input {
+    width: 200px !important;
+    margin: 15px auto;
+}
+
+button {
+    margin-top: 10px;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+table {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+th {
+    text-align: center;
+}
+
+nav {
+    background-color: #ddd;
+    border-radius: 10px;
+    width: 800px;
+    margin: 0 auto;
+}
+
+nav ul {
+    width: 750px;
+    margin: 0 auto;
+}
+
+.login {
+    border: 1px solid grey;
+    border-radius: 10px;
+    padding: 0px 15px 15px 15px;
+    width: 300px;
+    margin: 100px auto;
+}
+
+.login-section {
+    text-align: center;
+}
+
+.not_have {
+
+}
+
+#welcome-msg h3{
+    text-align: center;
+}
+
+.nav-links  {
+    margin-top: 30px;
+}
