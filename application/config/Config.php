@@ -18,6 +18,7 @@
                 'LAYOUT' => getcwd() . '/../application/views/layouts/layout.php',
                 'BASE_URL' => 'http://mvc.pl/',
                 'IMG_DIR' => getcwd(). '/images/',
+                'CUSTOM_IMG_DIR' => '/images/',
 
                 /**
                  * database config

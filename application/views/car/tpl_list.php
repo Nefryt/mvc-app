@@ -22,7 +22,7 @@
                     <td> <?php echo $car[ 'nazwa' ] ?> </td>
                     <td> <?php echo $car[ 'model' ] ?> </td>
                     <td> <?php echo $car[ 'opis' ] ?> </td>
-                    <td> <img src="<?php echo $config['BASE_URL'] ?>images/<?php echo $car[ 'podpis' ] ?>.png" width="150px" </td>
+                    <td> <img src="<?php echo $config['CUSTOM_IMG_DIR'] . $car[ 'podpis' ] ?>.png" width="150px" </td>
                     <td>
                         <a href="
                          <?php echo Url::getUrl( 'car', 'edit', array( 'id' => $car['samochody_id'] ) ) ?> "> Edytuj

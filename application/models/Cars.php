@@ -35,8 +35,9 @@
         }
 
         public function deleteCar($id) {
-            $query = "DELETE FROM samochody WHERE samochody_id =" . $id;
+            $query = "DELETE FROM samochody WHERE samochody_id = :id";
             $sth = $this->db->prepare($query);
+            $sth->bindParam(':id', $id);
             $sth->execute();
 
             return ;
@@ -44,9 +45,9 @@
 
         public function updateCar($new_model, $new_marka, $new_opis, $is_photo, $id)
         {
-            $query = "SELECT * FROM samochody WHERE samochody_id=" . $id;
+            $query = "SELECT * FROM samochody WHERE samochody_id=:id";
             $sth = $this->db->prepare($query);
-
+            $sth->bindParam(':id', $id);
             $sth->execute();
             $car = $sth->fetch();
 
@@ -80,7 +81,7 @@
                 $old_podpis  = $config['IMG_DIR'] . $car[ 'podpis' ] . '.png';
                 unlink($old_podpis);
                 $podpis = date("Y-m-d G:i:s", time());
-                $zdjecie->saveToFile( '/var/www/html/mvc/public/images/' . $podpis . '.png' );
+                $zdjecie->saveToFile( $config['DOC_ROOT'] . $config['CUSTOM_IMG_DIR'] . $podpis . '.png' );
             }
 
             $update_query = "UPDATE samochody SET marka_id=:marka, model=:model, opis=:opis, podpis=:podpis WHERE samochody_id=:id" ;

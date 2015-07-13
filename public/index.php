@@ -34,6 +34,8 @@
         $config = Config::getInstance();
         $config = $config->getConfig();
 
+        //Debug::p($config, true);
+
         if( file_exists( $config['APP_DIR'] . 'controllers/' . $controller . 'Controller.php' ) )
         {
             $requestObject = $controller . 'Controller';

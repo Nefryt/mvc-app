@@ -31,6 +31,9 @@
         }
 
         public function addAction() {
+            $config = Config::getInstance();
+            $config = $config->getConfig();
+
             $Cars = new Cars();
             $this->view->data = $Cars->getCategory();
 
@@ -48,7 +51,7 @@
             else {
                 $podpis = date("Y-m-d G:i:s", time());
                 $zdjecie = WideImage::loadFromUpload('zdjecie');
-                $zdjecie->saveToFile( '/var/www/html/mvc/public/images/' . $podpis . '.png' );
+                $zdjecie->saveToFile( $config['DOC_ROOT'] . $config['CUSTOM_IMG_DIR'] . $podpis . '.png' );
 
                 $Car = new Cars();
                 $Car->saveCar($model, $marka, $opis, $podpis);
